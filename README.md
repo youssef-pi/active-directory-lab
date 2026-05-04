@@ -116,16 +116,5 @@ whoami
 
 ---
 
-## 🔭 Améliorations possibles (roadmap)
-
-- Ajouter un **serveur DHCP** (ou rôle DHCP sur Windows Server)
-- Mettre en place un **second Domain Controller** pour la redondance
-- Déployer **Windows LAPS** pour la gestion des mots de passe admin locaux
-- Mettre en place une **PKI (AD CS)** + certificats
-- Ajouter un serveur de fichiers + droits NTFS/partages (scénario entreprise)
-- Supervision & logs (Event Viewer, centralisation, alerting)
-
----
-
 ## 📬 Contact
 Si tu as des questions ou suggestions : **ymansouri.pro@gmail.com**
