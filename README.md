@@ -8,7 +8,7 @@
 
 - Comprendre l’**authentification centralisée** via Active Directory
 - Structurer l’annuaire : **OU, utilisateurs, groupes**
-- Joindre un poste **Windows 10** au domaine et valider le fonctionnement
+- Joindre un poste **Windows 11** au domaine et valider le fonctionnement
 - Appliquer des **stratégies GPO** (sécurité + paramètres utilisateurs)
 - Mettre en place des **bonnes pratiques** (IP statique, DNS interne, organisation)
 
@@ -17,7 +17,7 @@
 ## 🧰 Technologies & outils
 
 - **Windows Server 2019/2022** : AD DS, DNS
-- **Windows 10** : poste client
+- **Windows 11** : poste client
 - **GPO** : Group Policy Management
 - **VMware / VirtualBox** : virtualisation
 
