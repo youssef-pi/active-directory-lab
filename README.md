@@ -19,7 +19,7 @@
 - **Windows Server 2019/2022** : AD DS, DNS
 - **Windows 11** : poste client
 - **GPO** : Group Policy Management
-- **VMware / VirtualBox** : virtualisation
+- **VirtualBox** : virtualisation
 
 ---
 
@@ -29,12 +29,12 @@
 | Rôle | Nom (exemple) | OS | IP (exemple) |
 |---|---|---|---|
 | Contrôleur de domaine | `DC01` | Windows Server 2019/2022 | `192.168.56.10` (statique) |
-| Poste client | `PC01` | Windows 10 | DHCP / statique (selon le lab) |
+| Poste client | `PC01` | Windows 11 | DHCP / statique (selon le lab) |
 
 ### 🌐 Réseau
 - **NAT** : accès internet (updates, etc.)
 - **Host-Only** : réseau isolé entre les VMs
-- **Domaine** : `exemple.local`
+- **Domaine** : `helpdesk-lab.local`
 - **DNS** : assuré par le contrôleur de domaine (`DC01`)
 
 > Important : le poste client doit utiliser **le DNS du DC** (ex: `192.168.56.10`) pour rejoindre le domaine.
@@ -56,7 +56,7 @@
 
 ### 3) Promotion en contrôleur de domaine
 - Création d’une nouvelle forêt :
-  - Domaine : `exemple.local`
+  - Domaine : `helpdesk-lab.local`
 - Vérification services AD + DNS
 
 ### 4) Organisation de l’annuaire
@@ -69,7 +69,7 @@
 
 ### 5) Jonction du poste client au domaine
 - Configuration DNS du client → **DNS = IP du DC**
-- Join domaine : `exemple.local`
+- Join domaine : `helpdesk-lab.local`
 - Vérification :
   - connexion avec un compte de domaine
   - PC visible dans AD (OU `Postes`)
@@ -97,9 +97,6 @@
 - ✅ Connexion au domaine depuis le poste client (compte AD)
 - ✅ Résolution DNS interne
 - ✅ Application des GPO (test + vérif `gpresult`)
-- ✅ Comportements attendus :
-  - restrictions horaires
-  - paramètres utilisateurs bien appliqués
 
 Commandes utiles (côté client) :
 ```powershell
@@ -123,7 +120,7 @@ whoami
 
 - Ajouter un **serveur DHCP** (ou rôle DHCP sur Windows Server)
 - Mettre en place un **second Domain Controller** pour la redondance
-- Déployer **LAPS / Windows LAPS** pour la gestion des mots de passe admin locaux
+- Déployer **Windows LAPS** pour la gestion des mots de passe admin locaux
 - Mettre en place une **PKI (AD CS)** + certificats
 - Ajouter un serveur de fichiers + droits NTFS/partages (scénario entreprise)
 - Supervision & logs (Event Viewer, centralisation, alerting)
